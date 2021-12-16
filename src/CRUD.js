@@ -36,6 +36,8 @@ const GetScoreFormValues = () => {
   postScore({ user: name, score })
     .then(() => {
       displayScores();
+      document.querySelector('.userName').value = '';
+      document.querySelector('.userScore').value = '';
     })
     .catch((error) => {
       document.querySelector('.result').textContent = error;
